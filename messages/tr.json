@@ -1,0 +1,151 @@
+{
+  "members": "Üyeler",
+  "restaurants": "Restoranlar",
+  "productive": "Verimli",
+  "chef": "Şef",
+  "partners": "Ortaklar",
+  "main": "Ana",
+  "our": "",
+  "map": "Helal Rehber",
+
+  "aboutUs": "Bizim Hakkımızda",
+  "aboutUsInformation": "Biz Dünya Helal Komitesi'yiz (WHC)",
+  "certificate": "turistik yerleri, catering kuruluşlarını ve gıda üreticilerini sertifikalandırıyoruz - Kur'an-ı Kerim ve uluslararası standartlar temelinde.",
+  "btnMore": "Daha fazla",
+  "address": "İslam Medeniyeti Merkezi",
+  "location": "Taşkent",
+
+  "pagesTitle": {
+    "partners": "Ortaklar",
+    "travel": "SEYAHAT",
+    "restaurantsHalal": "HALAL Restoranlar",
+    "ourMembers": "OUR MEMBERS",
+    "chefSHalal": "HALAL Şef",
+    "manufacturers": "ÜRETİCİLER",
+    "siyob": "",
+    "news": "Haberler",
+    "hotels": "otel"
+  },
+
+  "pageRestaurants": {
+    "title": "HALAL Restoranlar",
+    "information": "Bu bölümde Halal sertifikası almış yemek şirketleri hakkında bilgi edinebilirsiniz",
+    "btnmore": "Daha fazlası",
+    "ahmad": "Semerkand'ın ana caddesi üzerinde Türk mutfağının seçkin restoranı.",
+    "appex": "Taşkent şehrinde Helal Pizzacılar Ağı. Hızlı, lezzetli ve ucuz",
+    "nihol": "Özbek Mutfağının Aile Restoranı, Helal ürünler ve yüksek kalite",
+    "sariq": "Ünlü Sanatçının Pizzacıları ağı - Jakhongir Khazhaev - Sarık Bola - Helal Pizza.",
+    "shashlik": " Semerkant'ta restoran zinciri. Sulu ve Helal Kebaplar sizleri bekliyor",
+    "karadeniz": "Taşkent'in seçkin semtinde Türk restoranı. Türk Şeften Helal Yemekler" , 
+    "mahmud" : "Taşkent'te Mahmud kebabı Türk mutfağı Lezzetli tandır ekmeği, kıyma şiş, sebzeli ve yeşillikli tavuk."
+  },
+
+  "pageManufacturers": {
+    "title": "ÜRETİCİLER",
+    "information": "Burada Helal sertifikası alan gıda üreticileri",
+    "siyob": "SIYOB FERMA",
+    "shashlik": "SHASHLIKUZ",
+    "agro": "AGRO-BRAVO",
+    "site": "Web sitesine git",
+    "certificate": "sertifikayı görüntüle"
+  },
+
+  "pageHalalChef": {
+    "title": "HALAL Şef",
+    "information": "Bu bölüm Uluslararası Helal Şef rozeti alan seçkin şeflere ayrılmıştır"
+  },
+
+  "pageOurMembers": {
+    "title": "BİZİM ÜYELERİMİZ",
+    "information": "Bu bölümde uluslararası organizasyonumuzun parçası olan ülkeler listelenmektedir",
+    "azerbaijan": "AZERBAYCAN",
+    "kazakhstan": "KAZAKİSTAN",
+    "bosniaAndHerzegovina": "BOSNA VE HERSEK",
+    "kyrgyzstan": "KIRGIZİSTAN",
+    "morocco": "MOROKO",
+    "maldives": "MALDİVLER",
+    "nigeria": "NİJERYA",
+    "singapore": "SİNGAPUR",
+    "tunisia": "TUNUS",
+    "libya": "LİBYA",
+    "malaysia": "MALEZYA",
+    "pakistan": "PAKİSTAN",
+    "lebanon": "LÜBNAN",
+    "jordan": "JORDAN",
+    "bangladesh": "BANGLADEŞ",
+    "gambia": "GAMBİYA",
+    "algeria": "CEZAYİR",
+    "uzbekistan": "ÖZBEKİSTAN",
+    "qatar": "KATAR",
+    "egypt": "MISIR",
+    "saudiArabia": "SUUDİ ARABİSTAN",
+    "turkey": "TÜRKİYE"
+  },
+
+  "pagePartners": {
+    "title": "ORTAKLAR"
+  },
+
+  "pageFooter": {
+    "title": "İLETİŞİM",
+    "address": "JOHAN HELAL KOMİTESİ OG,  ",
+    "street": "Adres:Uzbekistan, Taşkent, Mirzo-Ulugbek ilçe, sokak Altyntepa 354",
+    "phone": "Tel: +998 71 266-77-78, +998 71 266-78-00",
+    "email": "E-posta Posts: committeehalal@gmail.com",
+    "workingMode": "Çalışma saati:",
+    "workingModeInformation": "Pazartesi - Cuma, 09:00 - 18:00",
+    "our": "Bizim hakkımızda",
+    "restourants": "Restoranlar",
+    "manufacturers": "Üreticiler",
+    "chefSHalal": "Halal şef",
+    "guide": "Halal sertifikasi",
+    "questions": "Sıkça Sorulan Sorular",
+    "apply": "Başvuru gönderin",
+    "faq": "SSS"
+  },
+  "pageAboutUs": {
+    "title": "Bizim hakkımızda",
+    "information": "Bizim hakkımızda - Dünya İslami Mutfak Toplulukları Platformu (WICS), 22 İslam ülkesinden mutfak dernekleri tarafından 13 Mayıs'ta kuruldu, 2017 yılında İstanbul, Türkiye. 2019 yılında, Dünya Helal Komitesi (WHC) WICS altında kurulmuştur.",
+    "tourist": " WHC - turistik yerleri, catering kuruluşlarını ve gıda üreticilerini sertifikalandırıyoruz - Kur'an-ı Kerim ve uluslararası standartlar temelinde.",
+    "document": "Aşağıda faaliyetlerimizi teyit eden belgeleri görebilirsiniz.",
+    "viewDocument": "Belgeleri Görüntüleme",
+    "location": "Konumumuz",
+    "command": "Bizim takım" ,
+    "map" : "haritada aç" , 
+    "process" : "Sertifika alma süreci" , 
+    "russianCharter" : "Yönetmelik Rusça" , 
+    "englishCharter" : "Yönetmelik İngilizcedir" , 
+    "uzbekCharter" : "Yonetmelik uzbekcedir" ,
+    "vertification" : " Dürüst doğrulama gereksinimleri" ,
+    "command1" : "Başkan" , 
+    "command2" : "Başkan Vekili" , 
+    "command3" : "Xalqaro denetçisi" , 
+    "command4" : "Bölgesel Direktörr" , 
+    "command5" : "Kotib" , 
+    "command6" : "koordinatör" , 
+     "halalChef" : "Halol Chef" , 
+     "lady" : "Lady Halol Chef"
+  },
+
+  "pageHalalGuide": {
+    "title": "Halal sertifikasi",
+    "information": "Bu bölümde, Helal sertifikası almış otellerin, catering kuruluşlarının ve gıda üreticilerinin bulunduğu yerleri gösteren bir dünya haritası yer almaktadır.",
+    "country": "Ülkeyi seçin",
+    "select": "Kategori seçin"
+  },
+  "mainC": {
+    "company": "DÜNYA ÇAPINDA HELAL KOMİTESİ",
+    "w": "(WICS)",
+    "btn": "Başvuru yapmak",
+    "request": "Başvurunuzu gönderin:",
+    "requestDesc": "Bu bölümde talepte bulunabilirsiniz, personelimiz sizinle iletişime geçecek, tavsiyelerde bulunacak, sorularınızı cevaplayacak ve Helal Sertifikası almanıza yardımcı olacaktır."
+  },
+  "faq": {
+    "certificate": " Helal Sertifikası Nedir?",
+    "certificateText": "  Belirli bir ürünün kullanım için onaylandığını onaylayan bir sertifika.",
+    "get": "Helal Sertifikasını nasıl alabilirim -",
+    "getText": "   Kur'an-ı Kerim'in tüm norm ve gerekliliklerine ve ayrıca uluslararası standartlara uymak gereklidir.",
+    "take": "Кому выдается Сертификат Халяль",
+    "takeText": "Туристическим объектам, Заведениям общественного питания а также производителям продуктов питания."
+  }
+}

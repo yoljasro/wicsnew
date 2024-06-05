@@ -1,0 +1,97 @@
+.main
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    align-items: center
+    width: 100%
+    background: #FFFFFF
+    height: 102px
+    padding: 20px 80px
+    margin-bottom: 24px
+
+    @media (max-width:769px)
+        width: 100%
+        padding: 20px 40px
+
+    &__section
+        display: flex
+        align-items: center
+        @media (max-width:769px)
+            width: 100%
+            justify-content: space-between
+            align-content: center
+            &:last-child
+                margin-top: 50px
+                width: 100%
+                justify-content: center
+                align-content: center
+                justify-content: space-between
+
+        & img
+            cursor: pointer !important
+            @media (max-width: 769px)
+                width: 100px !important
+
+    &__closeBtn
+        font-size: 25px
+        padding: 5px 8px
+        border-radius: 3px
+        border: none
+        float: right
+        cursor: pointer
+        background: aqua
+        &:hover
+            background: #5b74c7
+            transition: 0.5s ease
+
+    &__title
+        width: 100%
+        max-width: 320px
+        border: 2px solid #9B9B9B
+        font-family: ExoBold
+        font-size: 20px
+        height: 72px
+        line-height: 36px   
+        text-align: left
+        color: #000000
+        margin-left: 20px
+        border-right: none
+        border-top: none
+        border-bottom: none
+        padding-left: 20px
+        @media (max-width:769px)
+            font-size: 18px
+            line-height: 25px
+            padding-top: 10px
+            height: 65px
+
+        & span
+            color: #818181
+
+    &__btn
+        background: #00E376
+        border-radius: 6px
+        border: none
+        font-family: ExoBold
+        font-size: 18px
+        font-weight: 700
+        padding: 14px 36px
+        text-align: center
+        color: #FFFFFF
+        cursor: pointer
+        margin-right: 30px
+
+        &:hover
+            background: #48f41d
+
+    &__select
+        border: none
+        outline: none
+        color: #000000
+        font-family: ExoMedium
+        background: none
+        font-size: 16px
+        cursor: pointer
+        @media (max-width:769px)
+            font-size: 22px
+            font-family: ExoBold

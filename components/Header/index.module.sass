@@ -1,0 +1,99 @@
+.header
+    display: flex
+    flex-wrap: wrap
+    width: 100%
+    height: 720px
+    background-image: url("/assets/img/headerBg.png")
+    background-repeat: no-repeat
+    background-size: cover
+    padding: 50px 10px
+    justify-content: space-between
+    @media (max-width:1000px)
+        flex-direction: column
+
+    &__info
+        max-height: 419px
+        height: 100vh
+        // backdrop-filter: blur(10px)
+        max-width: 674px
+        width: 100%
+        border-radius: 10px
+        padding-left: 40px
+        // background: 
+        // border: 1px solid aqua
+        @media (max-width:769px)
+            max-height: 410px
+            min-width: 380px
+
+    &__title
+        font-family: ExoBold
+        color: red
+        font-size: 48px
+        color: #00E376
+        padding-top: 20px
+        @media (max-width:769px)
+            font-size: 35px
+
+        & span
+            color: #00E376
+
+    &__description
+        font-family: ExoExtraLight
+        font-size: 22px
+        font-weight: 500
+        line-height: 30px
+        color: #3D3D3D
+        width: 100%
+        max-width: 600px
+        padding-top: 20px
+        @media (max-width:769px)
+            font-size: 19px
+
+    &__btn
+        padding: 16px 63px
+        background: #3D3D3D
+        margin-top: 40px
+        border: none
+        font-family: ExoExtraLight
+        color: #FFFFFF
+        font-size: 24px
+        line-height: 29px
+        border-radius: 6px
+        @media (max-width:769px)
+            font-size: 18px
+
+        &:hover
+            background: #0b4982c9
+            cursor: pointer
+            transition: 1s all
+
+    &__location
+        display: flex
+        flex-direction: column
+        gap: 12px
+        position: relative
+        margin-left: 200px
+        margin-top: 450px
+        @media (max-width:1250px)
+            margin-top: 30px
+        @media (max-width:769px)
+            margin: 0
+            display: none
+
+    &__address
+        background: #2F2F2F
+        font-family: ExoBold
+        line-height: 36px
+        text-align: center
+        color: white
+        padding: 7px 11px 6px 17px
+        border-radius: 6px
+
+    // &__loc
+    //     background: #2F2F2F
+    //     font-family: ExoBold
+    //     line-height: 36px
+    //     text-align: center
+    //     color: white
+    //     padding: 1px 5px 2px 8px
+    //     border-radius: 6px

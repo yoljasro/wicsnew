@@ -1,0 +1,117 @@
+.title
+    display: flex
+    flex-direction: column
+    padding: 100px 80px
+
+    &__gallery
+        display: flex
+        justify-content: space-between
+        width: 100%
+        gap: 20px
+        flex-wrap: wrap
+
+    &__certificateBtn
+        width: 100%
+        max-width: 200px
+        background: #00ABA1
+        color: white
+        margin-top: 15px
+
+    &__images
+        display: flex
+        flex-wrap: wrap
+        width: 100%
+        justify-content: space-between
+        gap: 20px
+        @media (max-width:769px)
+            flex-direction: column
+
+    &__img
+        // object-fit: cover !important
+        @media (max-width:769px)
+            // width: 600px !important
+
+    &__subtitle
+        font-family: ExoBold
+        font-size: 48px
+        font-weight: 700
+        line-height: 58px
+        text-align: left
+        color: #000000
+
+    &__eventText
+        height: 108px
+        max-width: 593px
+        width: 100%
+
+        &__description
+            font-family: ExoExtraRegular
+            font-size: 20px
+            font-weight: 500
+            line-height: 36px
+            letter-spacing: 0.02em
+            text-align: left
+            color: #696969
+            padding-top: 36px
+
+    &__link
+        font-family: ExoExtraRegular
+        font-size: 18px
+        font-weight: 500
+        padding-top: 60px
+        line-height: 28px
+        letter-spacing: 0.02em
+        color: #35589C
+        text-align: left
+        text-decoration: underline
+
+    &__gallery
+        font-family: ExoBold
+        font-size: 36px
+        font-weight: 700
+        line-height: 43px
+        text-align: left
+        color: #000000
+        padding-top: 72px
+        padding-bottom: 30px
+
+    &__img
+        border-radius: 15px
+        // width: 500px !important
+        &:hover
+            transform: scale(1.4)
+            cursor: pointer
+            transition: 0.7s ease
+
+    &__social
+        font-family: ExoBold
+        font-size: 36px
+        font-weight: 700
+        line-height: 43px
+        color: #000000
+        text-align: left
+        padding-top: 10 0px
+
+    &__socialIcons
+        margin-top: 30px
+        display: flex
+
+        & img
+            margin-left: 15px
+
+    &__btn
+        font-family: ExoRegular
+        color: #FFFFFF
+        background: #00ABA1
+        font-size: 14px
+        font-weight: 400
+        line-height: 28px
+        letter-spacing: 0.02em
+        border: none
+        width: 100%
+        border-radius: 6px
+        margin-top: 44px
+        cursor: pointer
+        width: 100%
+        max-width: 250px
+        color: white
