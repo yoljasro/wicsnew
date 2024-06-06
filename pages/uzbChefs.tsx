@@ -1,13 +1,9 @@
-// next components
 import Link from "next/link";
 import Image from "next/image";
-// nuka carousel
 // react
-import React, { FC, ChangeEventHandler, useState, useEffect } from "react";
+import React, { FC, useState, useEffect } from "react";
 // next intl
 import { useTranslations } from "next-intl";
-// router
-import { useRouter } from "next/router";
 // styles
 import styles from "../styles/uzbChefs.module.sass";
 import { MainPageTitle } from "../components/MainPageTitle";
@@ -15,9 +11,93 @@ import { SocialNetworks } from "../components/socialNetworks";
 import { Button } from "@mui/material";
 import Head from "next/head";
 import { GetStaticProps } from "next";
+import axios from "axios";
 
 const UzbChefs: FC<any> = ({ props }) => {
   const t = useTranslations();
+
+  const localChefs = [
+    {
+      nameuz: "Фатхуллахон ТУРАХАНОВ",
+      image: "/assets/img/chef1.png",
+      instagram: "https://instagram.com/fathullakhan_?igshid=NDk5N2NlZjQ=",
+      facebook: "https://www.facebook.com/fathulla.khan.796?mibextid=LQQJ4d",
+      telegram: "@Fathullakhan_001",
+      certificate: "/assets/documents/fatxulla.pdf",
+    },
+    {
+      nameuz: "Музаффар МИРЗАКАРИМОВ",
+      image: "/assets/img/chef2.png",
+      instagram: "https://instagram.com/mirzakarimov.muzaffar?",
+      facebook: "/",
+      telegram: "/",
+      certificate: "/assets/documents/muzaffar.pdf",
+    },
+    {
+      nameuz: "Дониёр МАЛИКОВ",
+      image: "/assets/img/chef3.png",
+      instagram: "https://instagram.com/doniyor_malikovv",
+      facebook: "/",
+      telegram: "/",
+      certificate: "/assets/documents/doniyor.pdf",
+    },
+    {
+      nameuz: "Акмаль МАХМУДОВ",
+      image: "/assets/img/chef4.png",
+      instagram: "https://instagram.com/chef_akmall?igshid=NDk5N2NlZjQ=",
+      facebook: "/",
+      telegram: "/",
+      certificate: "/assets/documents/akmal.pdf",
+    },
+    {
+      nameuz: "Akhmad Khamdamov",
+      image: "/assets/img/command2.png",
+      instagram: "https://instagram.com/fathullakhan_?igshid=NDk5N2NlZjQ=",
+      facebook: "https://www.facebook.com/fathulla.khan.796?mibextid=LQQJ4d",
+      telegram: "@Fathullakhan_001",
+      certificate: "/assets/documents/ahmad.pdf",
+    },
+    {
+      nameuz: "Mirbabaev Elyorbek",
+      image: "/assets/img/command4.png",
+      instagram: "",
+      facebook: "/",
+      telegram: "/",
+      certificate: "/assets/documents/elyor.pdf",
+    },
+    {
+      nameuz: "Ruziboyev Azamat",
+      image: "/assets/img/command5.png",
+      instagram: "",
+      facebook: "/",
+      telegram: "/",
+      certificate: "/assets/documents/azamat.pdf",
+    },
+    {
+      nameuz: "Davron Razikov",
+      image: "/assets/img/razikov.png",
+      instagram: "",
+      facebook: "/",
+      telegram: "/",
+      certificate: "/assets/documents/razikov.pdf",
+    },
+  ];
+
+  const [chefs, setChefs] = useState(localChefs);
+
+  useEffect(() => {
+    const fetchChefs = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/chefs");
+        const data = response.data;
+        setChefs((prevChefs) => [...prevChefs, ...data]);
+      } catch (error) {
+        console.error("Error fetching chefs:", error);
+      }
+    };
+
+    fetchChefs();
+  }, []);
 
   return (
     <div className={styles.cont}>
@@ -38,193 +118,40 @@ const UzbChefs: FC<any> = ({ props }) => {
         description={t("pageHalalChef.information")}
       />
       <div className={styles.cont__chefs}>
-        <div className={styles.cont__chefs__card}>
-          <Image
-            src="/assets/img/chef1.png"
-            width={280}
-            height={390}
-            alt="chef1"
-          />
-          <div className={styles.cont__chefs__card__hoverContent}>
-            <h3>Фатхуллахон ТУРАХАНОВ</h3>
-            <SocialNetworks
-              instagram=" https://instagram.com/fathullakhan_?igshid=NDk5N2NlZjQ="
-              facebook="https://www.facebook.com/fathulla.khan.796?mibextid=LQQJ4d"
-              telegram="@Fathullakhan_001"
-            />
-             <a target={'_blank'} rel="noreferrer" href="assets/documents/fatxulla.pdf">
-              <Button className={styles.cont__certificateBtn} variant="contained">
-                {t("pageManufacturers.certificate")}
-              </Button>
-            </a>
-          </div>
-        </div>
+        {chefs.map((chef, index) => {
+          // Determine if the URL is local or from backend
+          const imageUrl = chef.image.startsWith("/")
+            ? chef.image
+            : `http://localhost:5000${chef.image}`;
+          const certificateUrl = chef.certificate.startsWith("/")
+            ? chef.certificate
+            : `http://localhost:5000${chef.certificate}`;
 
-        <div className={styles.cont__chefs__card}>
-          <Image
-            src="/assets/img/chef2.png"
-            width={280}
-            height={390}
-            alt="chef2"
-          />
-
-          <div className={styles.cont__chefs__card__hoverContent2}>
-            <h3>Музаффар МИРЗАКАРИМОВ</h3>
-            <SocialNetworks
-              instagram="https://instagram.com/mirzakarimov.muzaffar?"
-              facebook="/"
-              telegram="/"
-            />
-             <a target={'_blank'} rel="noreferrer" href="assets/documents/muzaffar.pdf">
-              <Button className={styles.cont__certificateBtn} variant="contained">
-                {t("pageManufacturers.certificate")}
-              </Button>
-            </a>
-          </div>
-        </div>
-
-        <div className={styles.cont__chefs__card}>
-          <Image
-            src="/assets/img/chef3.png"
-            width={280}
-            height={390}
-            alt="chef3"
-          />
-          <div className={styles.cont__chefs__card__hoverContent}>
-            <h3>Дониёр МАЛИКОВ</h3>
-            <SocialNetworks
-              instagram="https://instagram.com/doniyor_malikovv"
-              facebook="/"
-              telegram="/"
-            />
-             <a target={'_blank'} rel="noreferrer" href="assets/documents/doniyor.pdf">
-              <Button className={styles.cont__certificateBtn} variant="contained">
-                {t("pageManufacturers.certificate")}
-              </Button>
-            </a>
-          </div>
-        </div>
-
-        <div className={styles.cont__chefs__card}>
-          <Image
-            src="/assets/img/chef4.png"
-            width={280}
-            height={390}
-            alt="chef4"
-          />
-
-          <div className={styles.cont__chefs__card__hoverContent2}>
-            <h3>Акмаль МАХМУДОВ</h3>
-            <SocialNetworks
-              instagram="https://instagram.com/chef_akmall?igshid=NDk5N2NlZjQ="
-              facebook="/"
-              telegram="/"
-            />
-             <a target={'_blank'} rel="noreferrer" href="assets/documents/akmal.pdf">
-              <Button className={styles.cont__certificateBtn} variant="contained">
-                {t("pageManufacturers.certificate")}
-              </Button>
-            </a>
-          </div>
-        </div>
-
-        <div className={styles.cont__chefs__card}>
-          <Image
-            src="/assets/img/command2.png"
-            width={280}
-            height={390}
-            alt="chef1"
-          />
-          <div className={styles.cont__chefs__card__hoverContent}>
-            <h3>Akhmad Khamdamov</h3>
-            <SocialNetworks
-              instagram=" https://instagram.com/fathullakhan_?igshid=NDk5N2NlZjQ="
-              facebook="https://www.facebook.com/fathulla.khan.796?mibextid=LQQJ4d"
-              telegram="@Fathullakhan_001"
-            />
-             <a target={'_blank'} rel="noreferrer" href="assets/documents/ahmad.pdf">
-              <Button className={styles.cont__certificateBtn} variant="contained">
-                {t("pageManufacturers.certificate")}
-              </Button>
-            </a>
-          </div>
-        </div>
-
-        <div className={styles.cont__chefs__card}>
-          <Image
-            src="/assets/img/command4.png"
-            width={280}
-            height={390}
-            alt="chef2"
-          />
-
-          <div className={styles.cont__chefs__card__hoverContent2}>
-            <h3>Mirbabaev Elyorbek</h3>
-            <SocialNetworks
-              instagram=""
-              facebook="/"
-              telegram="/"
-            />
-             <a target={'_blank'} rel="noreferrer" href="assets/documents/elyor.pdf">
-              <Button className={styles.cont__certificateBtn} variant="contained">
-                {t("pageManufacturers.certificate")}
-              </Button>
-            </a>
-          </div>
-        </div>
-
-        <div className={styles.cont__chefs__card}>
-          <Image
-            src="/assets/img/command5.png"
-            width={280}
-            height={390}
-            alt="chef2"
-          />
-
-          <div className={styles.cont__chefs__card__hoverContent2}>
-            <h3>Ruziboyev Azamat</h3>
-            <SocialNetworks
-              instagram=""
-              facebook="/"
-              telegram="/"
-            />
-             <a target={'_blank'} rel="noreferrer" href="assets/documents/azamat.pdf">
-              <Button className={styles.cont__certificateBtn} variant="contained">
-                {t("pageManufacturers.certificate")}
-              </Button>
-            </a>
-          </div>
-
-          
-        </div>
-
-        <div className={styles.cont__chefs__card}>
-          <Image
-            src="/assets/img/razikov.png"
-            width={280}
-            height={390}
-            alt="chef2"
-          />
-
-          <div className={styles.cont__chefs__card__hoverContent2}>
-            <h3>Davron Razikov</h3>
-            <SocialNetworks
-              instagram=""
-              facebook="/"
-              telegram="/"
-            />
-             <a target={'_blank'} rel="noreferrer" href="assets/documents/razikov.pdf">
-              <Button className={styles.cont__certificateBtn} variant="contained">
-                {t("pageManufacturers.certificate")}
-              </Button>
-            </a>
-          </div>
-
-          
-        </div>
-
+          return (
+            <div key={chef._id || index} className={styles.cont__chefs__card}>
+              <Image
+                src={imageUrl}
+                width={280}
+                height={390}
+                alt={chef.nameuz || chef.nameuz}
+              />
+              <div className={index % 2 === 0 ? styles.cont__chefs__card__hoverContent : styles.cont__chefs__card__hoverContent2}>
+                <h3>{chef.nameuz || chef.nameuz}</h3>
+                <SocialNetworks
+                  instagram={chef.instagram}
+                  facebook={chef.facebook}
+                  telegram={chef.telegram}
+                />
+                <a target={'_blank'} rel="noreferrer" href={certificateUrl}>
+                  <Button className={styles.cont__certificateBtn} variant="contained">
+                    {t("pageManufacturers.certificate")}
+                  </Button>
+                </a>
+              </div>
+            </div>
+          );
+        })}
       </div>
-
     </div>
   );
 };
@@ -238,4 +165,3 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     },
   };
 };
-
