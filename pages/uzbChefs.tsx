@@ -1,22 +1,30 @@
-import Link from "next/link";
 import Image from "next/image";
-// react
-import React, { FC, useState, useEffect } from "react";
-// next intl
+import React, { FC, useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-// styles
+import { useRouter } from "next/router";
 import styles from "../styles/uzbChefs.module.sass";
 import { MainPageTitle } from "../components/MainPageTitle";
 import { SocialNetworks } from "../components/socialNetworks";
 import { Button } from "@mui/material";
 import Head from "next/head";
-import { GetStaticProps } from "next";
 import axios from "axios";
+import { GetStaticProps } from "next";
+
+interface ChefData {
+  nameuz: string;
+  image: string;
+  instagram: string;
+  facebook: string;
+  telegram: string;
+  certificate: string;
+}
 
 const UzbChefs: FC<any> = ({ props }) => {
   const t = useTranslations();
+  const router = useRouter();
+  const [chefs, setChefs] = useState<ChefData[]>([]);
 
-  const localChefs = [
+  const localChefs: ChefData[] = [
     {
       nameuz: "Фатхуллахон ТУРАХАНОВ",
       image: "/assets/img/chef1.png",
@@ -83,16 +91,19 @@ const UzbChefs: FC<any> = ({ props }) => {
     },
   ];
 
-  const [chefs, setChefs] = useState(localChefs);
-
   useEffect(() => {
     const fetchChefs = async () => {
       try {
         const response = await axios.get("http://localhost:5000/chefs");
-        const data = response.data;
-        setChefs((prevChefs) => [...prevChefs, ...data]);
+        const data = response.data.map((chef: ChefData) => ({
+          ...chef,
+          image: `http://localhost:5000${chef.image}`,
+          certificate: `http://localhost:5000${chef.certificate}`,
+        }));
+        setChefs([...localChefs, ...data]);
       } catch (error) {
         console.error("Error fetching chefs:", error);
+        setChefs(localChefs); // Fallback to local data if API fails
       }
     };
 
@@ -102,7 +113,7 @@ const UzbChefs: FC<any> = ({ props }) => {
   return (
     <div className={styles.cont}>
       <Head>
-        <title>UZB Halal Chefs </title>
+        <title>UZB Halal Chefs</title>
         <meta
           name="description"
           content="worldhalal.uz Halol sertifikatini beruvchi kompaniya rasmiy web sayti"
@@ -118,39 +129,30 @@ const UzbChefs: FC<any> = ({ props }) => {
         description={t("pageHalalChef.information")}
       />
       <div className={styles.cont__chefs}>
-        {chefs.map((chef, index) => {
-          // Determine if the URL is local or from backend
-          const imageUrl = chef.image.startsWith("/")
-            ? chef.image
-            : `http://localhost:5000${chef.image}`;
-          const certificateUrl = chef.certificate.startsWith("/")
-            ? chef.certificate
-            : `http://localhost:5000${chef.certificate}`;
-
-          return (
-            <div key={chef._id || index} className={styles.cont__chefs__card}>
-              <Image
-                src={imageUrl}
-                width={280}
-                height={390}
-                alt={chef.nameuz || chef.nameuz}
+        {chefs.map((chef, index) => (
+          <div key={index} className={styles.cont__chefs__card}>
+            <Image
+              src={chef.image}
+              width={280}
+              height={390}
+              alt={chef.nameuz}
+              unoptimized={!chef.image.startsWith("/")}
+            />
+            <div className={index % 2 === 0 ? styles.cont__chefs__card__hoverContent : styles.cont__chefs__card__hoverContent2}>
+              <h3>{chef.nameuz}</h3>
+              <SocialNetworks
+                instagram={chef.instagram}
+                facebook={chef.facebook}
+                telegram={chef.telegram}
               />
-              <div className={index % 2 === 0 ? styles.cont__chefs__card__hoverContent : styles.cont__chefs__card__hoverContent2}>
-                <h3>{chef.nameuz || chef.nameuz}</h3>
-                <SocialNetworks
-                  instagram={chef.instagram}
-                  facebook={chef.facebook}
-                  telegram={chef.telegram}
-                />
-                <a target={'_blank'} rel="noreferrer" href={certificateUrl}>
-                  <Button className={styles.cont__certificateBtn} variant="contained">
-                    {t("pageManufacturers.certificate")}
-                  </Button>
-                </a>
-              </div>
+              <a target="_blank" rel="noreferrer" href={chef.certificate}>
+                <Button className={styles.cont__certificateBtn} variant="contained">
+                  {t("pageManufacturers.certificate")}
+                </Button>
+              </a>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </div>
   );

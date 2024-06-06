@@ -8,32 +8,23 @@ import { Button } from "@mui/material";
 import axios from "axios";
 import { GetStaticProps } from "next";
 
-const Restaurants: FC<any> = () => {
+interface RestaurantData {
+  name: string;
+  imageSrc: string;
+  logoSrc: string;
+  descriptionKey: string;
+  certificatePdf: string;
+  instagramUrl: string;
+  facebookUrl: string;
+  telegramUrl: string;
+}
+
+const Restaurants: FC = () => {
   const t = useTranslations();
-  const [restaurantsData, setRestaurantsData] = useState([]);
+  const [apiData, setApiData] = useState<RestaurantData[]>([]);
 
-  // useEffect to fetch data from backend and merge with existing data
-  useEffect(() => {
-    const fetchRestaurantsData = async () => {
-      try {
-        const response = await axios.get("http://localhost:5000/res");
-        if (response.status === 200) {
-          const backendData = response.data;
-          // Merge backendData with existing restaurantsData
-          setRestaurantsData((prevData) => [...prevData, ...backendData]);
-        } else {
-          console.error("Failed to fetch data from backend");
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchRestaurantsData();
-  }, []);
-
-  // Avvaldan bor ma'lumotlar
-  const existingRestaurants = [
+  // Static data
+  const staticData: RestaurantData[] = [
     {
       name: "KHAN AHMAD",
       imageSrc: "/assets/img/xanAhmad.png",
@@ -42,7 +33,7 @@ const Restaurants: FC<any> = () => {
       certificatePdf: "/assets/documents/ahmad.pdf",
       instagramUrl: "https://www.instagram.com/khanahmad_restaurant/?igshid=NDk5N2NlZjQ%3D",
       facebookUrl: "https://www.facebook.com/profile.php?id=100054751930596&mibextid=LQQJ4d",
-      telegramUrl: "https://t.me/KhanAhmad_restaurant"
+      telegramUrl: "https://t.me/KhanAhmad_restaurant",
     },
     {
       name: "AppexPizza",
@@ -52,7 +43,7 @@ const Restaurants: FC<any> = () => {
       certificatePdf: "/assets/documents/appex.pdf",
       instagramUrl: "https://www.instagram.com/apexpizza.uz/?igshid=NDk5N2NlZjQ%3D",
       facebookUrl: "https://www.facebook.com/apexpizza.uz?mibextid=LQQJ4d",
-      telegramUrl: "/"
+      telegramUrl: "/",
     },
     {
       name: "Sariq Bola",
@@ -62,7 +53,7 @@ const Restaurants: FC<any> = () => {
       certificatePdf: "/assets/documents/sariq.pdf",
       instagramUrl: "https://www.instagram.com/sariqbola_pizza/?igshid=NDk5N2NlZjQ%3D",
       facebookUrl: "https://www.facebook.com/sariqbolapizza/?mibextid=LQQJ4d",
-      telegramUrl: "/"
+      telegramUrl: "/",
     },
     {
       name: "Shashlik Uz",
@@ -72,7 +63,7 @@ const Restaurants: FC<any> = () => {
       certificatePdf: "/assets/documents/shashlik.pdf",
       instagramUrl: "https://www.instagram.com/shashlikuz/?igshid=NDk5N2NlZjQ%3D",
       facebookUrl: "https://www.facebook.com/shashlikuz1?mibextid=LQQJ4d",
-      telegramUrl: "https://t.me/shashlikuz_group"
+      telegramUrl: "https://t.me/shashlikuz_group",
     },
     {
       name: "Nihol",
@@ -82,7 +73,7 @@ const Restaurants: FC<any> = () => {
       certificatePdf: "/assets/documents/nihol.pdf",
       instagramUrl: "https://www.instagram.com/nihol_cafe",
       facebookUrl: "https://www.facebook.com/Nihol.cafe/",
-      telegramUrl: "https://t.me/niholcafee"
+      telegramUrl: "https://t.me/niholcafee",
     },
     {
       name: "Karadeniz",
@@ -92,7 +83,7 @@ const Restaurants: FC<any> = () => {
       certificatePdf: "/assets/documents/karadeniz.pdf",
       instagramUrl: "https://www.instagram.com/karadeniz.uz/",
       facebookUrl: "https://www.facebook.com/karadeniz.uz/",
-      telegramUrl: "https://t.me/karadeniz_restaurant"
+      telegramUrl: "https://t.me/karadeniz_restaurant",
     },
     {
       name: "Mahmud Kebab",
@@ -102,9 +93,33 @@ const Restaurants: FC<any> = () => {
       certificatePdf: "/assets/documents/mahmudKebab.pdf",
       instagramUrl: "https://www.instagram.com/mahmoodkabob/",
       facebookUrl: "https://www.facebook.com/mahmoodkabob/",
-      telegramUrl: "https://t.me/mahmoodkabob_bot"
+      telegramUrl: "https://t.me/mahmoodkabob_bot",
     },
   ];
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/res");
+        const backendData = response.data.map((item: any) => ({
+          name: item.nameuz,
+          imageSrc: `http://localhost:5000${item.image}`,
+          logoSrc: "", // Assuming there's no logoSrc in the API response
+          descriptionKey: "", // Assuming descriptionKey is not provided in the API response
+          certificatePdf: `http://localhost:5000${item.certificate}`,
+          instagramUrl: item.instagram,
+          facebookUrl: item.facebook,
+          telegramUrl: item.telegram,
+        }));
+        setApiData(backendData);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchData();
+  }, []);
+
+  const mergedData = [...staticData, ...apiData];
 
   return (
     <div className={styles.restaurants}>
@@ -113,21 +128,25 @@ const Restaurants: FC<any> = () => {
         description={t("pageRestaurants.information")}
       />
       <div className={styles.restaurants__cont}>
-        {[...existingRestaurants, ...restaurantsData].map((restaurant, index) => (
+        {mergedData.map((restaurant, index) => (
           <div key={index} className={styles.restaurants__card}>
             <Image
-              src={restaurant.imageSrc}
+              src={restaurant.imageSrc || "/assets/img/placeholder.png"}
               width={600}
               height={330}
               alt="image"
             />
             <div className={styles.restaurants__logo}>
-              <Image src={restaurant.logoSrc} alt="logo" width={100} height={100} />
+              {restaurant.logoSrc ? (
+                <Image src={restaurant.logoSrc} alt="logo" width={100} height={100} />
+              ) : (
+                <Image src="/assets/img/placeholder-logo.png" alt="logo" width={100} height={100} />
+              )}
             </div>
             <div className={styles.restaurants__content}>
               <h1 className={styles.restaurants__title}>{restaurant.name}</h1>
               <p className={styles.restaurants__description}>
-                {t(restaurant.descriptionKey)}
+                {restaurant.descriptionKey ? t(restaurant.descriptionKey) : ""}
               </p>
               <Button variant="contained" className={styles.restaurants__certificateBtn}>
                 <a rel="noreferrer" target="_blank" href={restaurant.certificatePdf}>
