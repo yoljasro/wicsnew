@@ -60,23 +60,6 @@ const Azerbajan: FC<any> = ({ props }) => {
           </div>
         </div>
 
-        <div className={styles.cont__chefs__card}>
-          <Image
-            src="/assets/img/otherchef4.jpeg"
-            width={280}
-            height={390}
-            alt="chef2"
-          />
-
-          <div className={styles.cont__chefs__card__hoverContent2}>
-            <h3>Elchin Mamadov</h3>
-            <SocialNetworks
-              instagram="/"
-              facebook="/"
-              telegram="/"
-            />
-          </div>
-        </div>
 
 
       </div>

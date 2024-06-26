@@ -1,10 +1,8 @@
-import * as React from "react";
-import { useRouter } from "next/router";
-import Image from "next/image";
-import Head from "next/head";
-import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import { GetStaticProps, GetStaticPaths, NextPage } from 'next';
 import axios from 'axios';
-import styles from "../../styles/news.module.sass";
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '../../styles/news.module.sass';
 
 interface NewsDetailProps {
   newsItem: {
@@ -15,9 +13,10 @@ interface NewsDetailProps {
     description: string;
     date: string;
   } | null;
+  messages: Record<string, string> | null;
 }
 
-const NewsDetail: NextPage<NewsDetailProps> = ({ newsItem }) => {
+const NewsDetail: NextPage<NewsDetailProps> = ({ newsItem, messages }) => {
   if (!newsItem) {
     return (
       <div className={styles.newsDetail}>
@@ -55,17 +54,25 @@ const NewsDetail: NextPage<NewsDetailProps> = ({ newsItem }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const response = await axios.get('http://localhost:5000/news');
-  const newsItems = response.data;
+  try {
+    const response = await axios.get('http://localhost:5000/news');
+    const newsItems = response.data;
 
-  const paths = newsItems.map((item: any) => ({
-    params: { id: item._id },
-  }));
+    const paths = newsItems.map((item: any) => ({
+      params: { id: item._id },
+    }));
 
-  return {
-    paths,
-    fallback: false,
-  };
+    return {
+      paths,
+      fallback: false,
+    };
+  } catch (error) {
+    console.error("Error fetching news items: ", error);
+    return {
+      paths: [],
+      fallback: false,
+    };
+  }
 };
 
 export const getStaticProps: GetStaticProps = async (context) => {
@@ -79,17 +86,25 @@ export const getStaticProps: GetStaticProps = async (context) => {
       import(`../../messages/${context.locale}.json`).then((res) => res.default),
     ]);
 
-    newsItem = {
-      id: newsResponse.data._id,
-      imageSrc: `http://localhost:5000${newsResponse.data.image}`,
-      imageAlt: "image",
-      title: newsResponse.data.title,
-      description: newsResponse.data.description,
-      date: newsResponse.data.date,
-    };
+    if (newsResponse.data) {
+      newsItem = {
+        id: newsResponse.data._id,
+        imageSrc: `http://localhost:5000${newsResponse.data.image}`,
+        imageAlt: "image",
+        title: newsResponse.data.title,
+        description: newsResponse.data.description,
+        date: newsResponse.data.date,
+      };
+    }
+
     messages = messagesResponse;
   } catch (error) {
-    console.error("Error fetching news item: ", error);
+    if (axios.isAxiosError(error)) {
+      console.error("Error fetching news item or messages: ", error.message);
+      console.error("Error details: ", error.response?.data);
+    } else {
+      console.error("Unexpected error: ", error);
+    }
   }
 
   return {

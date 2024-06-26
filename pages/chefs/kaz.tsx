@@ -16,7 +16,7 @@ import { Button } from "@mui/material";
 import Head from "next/head";
 import { GetStaticProps } from "next";
 
-const Turkey: FC<any> = ({ props }) => {
+const Chechnya: FC<any> = ({ props }) => {
   const t = useTranslations();
 
   return (
@@ -39,62 +39,60 @@ const Turkey: FC<any> = ({ props }) => {
       />
       <div className={styles.cont__chefs}>
 
-      <div className={styles.cont__chefs__card}>
+        <div className={styles.cont__chefs__card}>
           <Image
-            src="/assets/img/cheffs.png"
+            src="/assets/img/kaz2.jpg"
             width={280}
             height={390}
             alt="chef2"
           />
 
           <div className={styles.cont__chefs__card__hoverContent2}>
-            <h3>Шарипов Шухрат </h3>
+            <h3>Александр Трегубенко </h3>
             <SocialNetworks
               instagram="/"
               facebook="/"
               telegram="/"
             />
-            <a target={'_blank'} rel="noreferrer" href="/assets/documents/shuhrat.pdf">
+            <a target={'_blank'} rel="noreferrer" href="/assets/documents/chechnya.pdf">
               <Button className={styles.cont__certificateBtn} variant="contained">
                 {t("pageManufacturers.certificate")}
               </Button>
             </a>
           </div>
         </div>
-        
 
         <div className={styles.cont__chefs__card}>
           <Image
-            src="/assets/img/berik.png"
+            src="/assets/img/kaz1.jpg"
             width={280}
             height={390}
             alt="chef2"
           />
 
           <div className={styles.cont__chefs__card__hoverContent2}>
-            <h3>Эгинбаев Берик </h3>
+            <h3>Фарид Жузбакиев </h3>
             <SocialNetworks
               instagram="/"
               facebook="/"
               telegram="/"
             />
-            <a target={'_blank'} rel="noreferrer" href="/assets/documents/berik.pdf">
+            <a target={'_blank'} rel="noreferrer" href="/assets/documents/chechnya.pdf">
               <Button className={styles.cont__certificateBtn} variant="contained">
                 {t("pageManufacturers.certificate")}
               </Button>
             </a>
           </div>
-
-         
-
         </div>
+
+
 
       </div>
     </div>
   );
 };
 
-export default Turkey;
+export default Chechnya;
 
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {

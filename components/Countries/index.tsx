@@ -31,6 +31,7 @@ type LinkType = {
   turkey: string;
   krgzs: string;
   chechnya: string;
+  kaz: string;
 };
 function TabPanel(props: TabPanelProps) {
   const { children, country, value, index, ...other } = props;
@@ -65,7 +66,8 @@ export const Countries: FC<LinkType> = ({
   saudia,
   turkey,
   krgzs,
-  chechnya
+  chechnya,
+  kaz
 }) => {
   const router = useRouter();
   const theme = useTheme();
@@ -145,17 +147,6 @@ export const Countries: FC<LinkType> = ({
               >
                 <div className={styles.cont__card}>Kyrgyzstan</div>
               </a>
-              <div className={styles.cont__card}>Morocco</div>
-              <div className={styles.cont__card}>Nigeria</div>
-              <div className={styles.cont__card}>Malaysia</div>
-              <div className={styles.cont__card}>Pakistan</div>
-              <div className={styles.cont__card}>Livan</div>
-              <div className={styles.cont__card}>Jordan</div>
-              <div className={styles.cont__card}>Bangladesh</div>
-              <div className={styles.cont__card}>Gambia</div>
-              <div className={styles.cont__card}>Katar</div>
-              <div className={styles.cont__card}>Egypt</div>
-              <div className={styles.cont__card}>Kazakstan</div>
               <a
                 rel="noreferrer"
                 target="_blank"
@@ -164,6 +155,26 @@ export const Countries: FC<LinkType> = ({
               >
                 <div className={styles.cont__card}>Chechnya</div>
               </a>
+              <a
+                rel="noreferrer"
+                target="_blank"
+                href={kaz}
+                className={styles.cont__link}
+              >
+              <div className={styles.cont__card}>Kazakstan</div>
+              </a>
+              <div className={styles.cont__card}>Malaysia</div>
+              <div className={styles.cont__card}>Pakistan</div>
+              <div className={styles.cont__card}>Livan</div>
+              <div className={styles.cont__card}>Jordan</div>
+              <div className={styles.cont__card}>Bangladesh</div>
+              <div className={styles.cont__card}>Gambia</div>
+              <div className={styles.cont__card}>Katar</div>
+              <div className={styles.cont__card}>Egypt</div>
+              <div className={styles.cont__card}>Morocco</div>
+
+             
+          
               <div className={styles.cont__card}>Bosnia-Herzegovina</div>
               <div className={styles.cont__card}>Maldives</div>
               <div className={styles.cont__card}>Tunisia</div>

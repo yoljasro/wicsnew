@@ -38,6 +38,51 @@ const Turkey: FC<any> = ({ props }) => {
         description={t("pageHalalChef.information")}
       />
       <div className={styles.cont__chefs}>
+
+      <div className={styles.cont__chefs__card}>
+          <Image
+            src="/assets/img/pidrprezident.jpg"
+            width={280}
+            height={390}
+            alt="chef1"
+          />
+          <div className={styles.cont__chefs__card__hoverContent}>
+            <h3>Oner Gulfas</h3>
+            <SocialNetworks
+              instagram=" /"
+              facebook="/"
+              telegram="/"
+            />
+            <a target={'_blank'} rel="noreferrer" href="/assets/documents/biralmis.pdf">
+              <Button className={styles.cont__certificateBtn} variant="contained">
+                {t("pageManufacturers.certificate")}
+              </Button>
+            </a>
+          </div>
+        </div>
+
+      <div className={styles.cont__chefs__card}>
+          <Image
+            src="/assets/img/ttt.jpg"
+            width={280}
+            height={390}
+            alt="chef1"
+          />
+          <div className={styles.cont__chefs__card__hoverContent}>
+            <h3>Umar and  Bilal</h3>
+            <SocialNetworks
+              instagram=" /"
+              facebook="/"
+              telegram="/"
+            />
+            <a target={'_blank'} rel="noreferrer" href="/assets/documents/biralmis.pdf">
+              <Button className={styles.cont__certificateBtn} variant="contained">
+                {t("pageManufacturers.certificate")}
+              </Button>
+            </a>
+          </div>
+        </div>
+
         <div className={styles.cont__chefs__card}>
           <Image
             src="/assets/img/biralmis.jpeg"
@@ -107,29 +152,7 @@ const Turkey: FC<any> = ({ props }) => {
         </div>
 
 
-        <div className={styles.cont__chefs__card}>
-          <Image
-            src="/assets/img/cheffs.png"
-            width={280}
-            height={390}
-            alt="chef2"
-          />
-
-          <div className={styles.cont__chefs__card__hoverContent2}>
-            <h3>Шарипов Шухрат </h3>
-            <SocialNetworks
-              instagram="/"
-              facebook="/"
-              telegram="/"
-            />
-            <a target={'_blank'} rel="noreferrer" href="/assets/documents/shuhrat.pdf">
-              <Button className={styles.cont__certificateBtn} variant="contained">
-                {t("pageManufacturers.certificate")}
-              </Button>
-            </a>
-          </div>
-        </div>
-
+        
       </div>
     </div>
   );
