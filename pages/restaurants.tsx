@@ -100,13 +100,13 @@ const Restaurants: FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/res");
+        const response = await axios.get("https://api.worldhalal.uz//res");
         const backendData = response.data.map((item: any) => ({
           name: item.nameuz,
-          imageSrc: `http://localhost:5000${item.image}`,
+          imageSrc: `https://api.worldhalal.uz/${item.image}`,
           logoSrc: "", // Assuming there's no logoSrc in the API response
           descriptionKey: "", // Assuming descriptionKey is not provided in the API response
-          certificatePdf: `http://localhost:5000${item.certificate}`,
+          certificatePdf: `https://api.worldhalal.uz/${item.certificate}`,
           instagramUrl: item.instagram,
           facebookUrl: item.facebook,
           telegramUrl: item.telegram,

@@ -55,7 +55,7 @@ const NewsDetail: NextPage<NewsDetailProps> = ({ newsItem, messages }) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   try {
-    const response = await axios.get('http://localhost:5000/news');
+    const response = await axios.get('https://api.worldhalal.uz//news');
     const newsItems = response.data;
 
     const paths = newsItems.map((item: any) => ({
@@ -82,14 +82,14 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   try {
     const [newsResponse, messagesResponse] = await Promise.all([
-      axios.get(`http://localhost:5000/news/${id}`),
+      axios.get(`https://api.worldhalal.uz//news/${id}`),
       import(`../../messages/${context.locale}.json`).then((res) => res.default),
     ]);
 
     if (newsResponse.data) {
       newsItem = {
         id: newsResponse.data._id,
-        imageSrc: `http://localhost:5000${newsResponse.data.image}`,
+        imageSrc: `https://api.worldhalal.uz/${newsResponse.data.image}`,
         imageAlt: "image",
         title: newsResponse.data.title,
         description: newsResponse.data.description,

@@ -101,10 +101,10 @@ export const ProductionsNew: FC = () => {
       try {
         const apiResponse: ProjectLogoResponse[] = await projectsLogoAPI();
         const formattedData: ProjectData[] = apiResponse.map((item) => ({
-          imageSrc: `http://localhost:5000${item.image}`,
+          imageSrc: `https://api.worldhalal.uz/${item.image}`,
           title: item.nameuz,
           siteLink: item.siteLink,
-          certificateLink: `http://localhost:5000${item.certificate}`,
+          certificateLink: `https://api.worldhalal.uz/${item.certificate}`,
           socialNetworks: {
             instagram: item.instagram,
             facebook: item.facebook,

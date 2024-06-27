@@ -51,7 +51,7 @@ const Map: FC<MapProps> = () => {
     // Backend API'dan ma'lumotlarni olish
     const fetchPlaces = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/gid");
+        const response = await axios.get("https://api.worldhalal.uz/gid");
         setPlaces(prevPlaces => [...prevPlaces, ...response.data]);
       } catch (error) {
         console.error("Failed to fetch places:", error);

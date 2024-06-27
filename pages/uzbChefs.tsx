@@ -119,11 +119,11 @@ const UzbChefs: FC<any> = ({ props }) => {
   useEffect(() => {
     const fetchChefs = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/chefs");
+        const response = await axios.get("https://api.worldhalal.uz//chefs");
         const data = response.data.map((chef: ChefData) => ({
           ...chef,
-          image: `http://localhost:5000${chef.image}`,
-          certificate: `http://localhost:5000${chef.certificate}`,
+          image: `https://api.worldhalal.uz/${chef.image}`,
+          certificate: `https://api.worldhalal.uz/${chef.certificate}`,
         }));
         setChefs([...localChefs, ...data]);
       } catch (error) {

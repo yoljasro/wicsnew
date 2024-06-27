@@ -3,7 +3,7 @@ import axios from 'axios';
 import {  ProjectLogoResponse , MembersResponse } from '../../types'; // O'zgartirish kerak
 
 
-const apiUrl = 'http://localhost:5000'; // BaseUrl
+const apiUrl = 'https://api.worldhalal.uz/'; // BaseUrl
 const projectLogo = '/projectlogos'; // Backend projects endPoint
 const members = "/members"
 const clientsEndpoint = '/clients'; // Backend clients endPoint

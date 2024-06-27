@@ -87,7 +87,7 @@ export const Members: FC<any> = () => {
             <a rel="noreferrer" target={"_blank"} href={item.href}>
               <div className={styles.members} key={item.alt}>
               <img
-                  src={item.image.startsWith("/assets") ? item.image : `http://localhost:5000${item.image}`}
+                  src={item.image.startsWith("/assets") ? item.image : `https://api.worldhalal.uz/${item.image}`}
                   alt={item.alt}
                 />
                 <p className={styles.members__text}>{item.title}</p>

@@ -27,7 +27,7 @@ export const Form = () => {
 
   const handleSubmit = async () => {
     const data = { name, surname, brandName, serviceType, phone, email };
-    const url = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/form";
+    const url = process.env.NEXT_PUBLIC_API_URL || "https://api.worldhalal.uz/form";
 
     if (!name || !surname || !brandName || !serviceType || !phone || !email) {
       alert("Please fill in all fields");

@@ -10,7 +10,7 @@ function AboutPage() {
   const [about, setAbout] = useState<About[]>([]);
 
   useEffect(() => {
-    axios.get<About[]>("http://localhost:5000/about").then((response) => {
+    axios.get<About[]>("https://api.worldhalal.uz/about").then((response) => {
       setAbout(response.data);
     });
   }, []);

@@ -89,10 +89,10 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   let dynamicNewsItems: NewsItem[] = [];
 
   try {
-    const response = await axios.get('http://localhost:5000/news');
+    const response = await axios.get('https://api.worldhalal.uz/news');
     dynamicNewsItems = response.data.map((item: any) => ({
       id: item._id,
-      imageSrc: `http://localhost:5000${item.image}`,
+      imageSrc: `https://api.worldhalal.uz/${item.image}`,
       imageAlt: "image",
       title: item.title,
       description: item.description,
