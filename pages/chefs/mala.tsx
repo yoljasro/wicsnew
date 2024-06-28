@@ -41,7 +41,7 @@ const Mala: FC<any> = ({ props }) => {
 
       <div className={styles.cont__chefs__card}>
           <Image
-            src="/assets/img/mala.jpg"
+            src="/assets/img/mala.png"
             width={280}
             height={390}
             alt="chef2"

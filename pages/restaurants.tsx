@@ -89,6 +89,12 @@ const Restaurants: FC = () => {
       name: "Mahmud Kebab",
       imageSrc: "/assets/img/kebab.png",
       logoSrc: "/assets/img/logoMahmud.jpg",
+
+
+
+
+
+      
       descriptionKey: "pageRestaurants.mahmud",
       certificatePdf: "/assets/documents/mahmudKebab.pdf",
       instagramUrl: "https://www.instagram.com/mahmoodkabob/",
