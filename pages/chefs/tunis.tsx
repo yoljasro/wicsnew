@@ -45,7 +45,7 @@ const Tunis: FC<any> = ({ props }) => {
                         width={280}
                         height={390}
                         alt="chef2"
-                    />
+                    /> 
 
                     <div className={styles.cont__chefs__card__hoverContent2}>
                         <h3>Elchin Mamadov</h3>
