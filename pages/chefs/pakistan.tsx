@@ -40,7 +40,7 @@ const Mala: FC<any> = ({ props }) => {
             <div className={styles.cont__chefs}>
                 <div className={styles.cont__chefs__card}>
                     <Image
-                        src="/assets/img/pakistan1.png"
+                        src="/assets/img/pakistan1.jpg"
                         width={280}
                         height={390}
                         alt="chef2"
@@ -63,7 +63,7 @@ const Mala: FC<any> = ({ props }) => {
 
                 <div className={styles.cont__chefs__card}>
                     <Image
-                        src="/assets/img/pakistan2.png"
+                        src="/assets/img/pakistan2.jpg"
                         width={280}
                         height={390}
                         alt="chef2"
