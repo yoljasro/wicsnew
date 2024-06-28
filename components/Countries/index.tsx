@@ -33,6 +33,8 @@ type LinkType = {
   chechnya: string;
   kaz: string;
   mala: string;
+  singa:string;
+  livan:string;
 };
 function TabPanel(props: TabPanelProps) {
   const { children, country, value, index, ...other } = props;
@@ -69,7 +71,9 @@ export const Countries: FC<LinkType> = ({
   krgzs,
   chechnya,
   kaz,
-  mala
+  mala,
+  livan,
+  singa
 }) => {
   const router = useRouter();
   const theme = useTheme();
@@ -174,8 +178,22 @@ export const Countries: FC<LinkType> = ({
               <div className={styles.cont__card}>Malaysia</div>
               </a>
               <div className={styles.cont__card}>Pakistan</div>
+              <a
+                rel="noreferrer"
+                target="_blank"
+                href={livan}
+                className={styles.cont__link}
+              >
               <div className={styles.cont__card}>Livan</div>
-              <div className={styles.cont__card}>Jordan</div>
+              </a>
+              <a
+                rel="noreferrer"
+                target="_blank"
+                href={singa}
+                className={styles.cont__link}
+              >
+              <div className={styles.cont__card}>Singapore</div>
+              </a>
               <div className={styles.cont__card}>Bangladesh</div>
               <div className={styles.cont__card}>Gambia</div>
               <div className={styles.cont__card}>Katar</div>
@@ -188,7 +206,7 @@ export const Countries: FC<LinkType> = ({
               <div className={styles.cont__card}>Maldives</div>
               <div className={styles.cont__card}>Tunisia</div>
               <div className={styles.cont__card}>Palastine</div>
-              <div className={styles.cont__card}>Singapore</div>
+              <div className={styles.cont__card}>Jordan</div>
             </div>
           </TabPanel>
           <TabPanel value={value} index={1} dir={theme.direction}>

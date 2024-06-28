@@ -33,7 +33,7 @@ const Header: FC<any> = () => {
         />
       </div>
       <div>
-        <Countries link={"/uzbChefs"} azerbajan={"/chefs/azerbajan"} saudia={"/chefs/saudia"} turkey={"/chefs/turkey"} krgzs={"/chefs/krgzs"} chechnya={"/chefs/chechnya"} kaz={"/chefs/kaz"} mala={"/chefs/mala"}/>
+        <Countries link={"/uzbChefs"} azerbajan={"/chefs/azerbajan"} saudia={"/chefs/saudia"} turkey={"/chefs/turkey"} krgzs={"/chefs/krgzs"} chechnya={"/chefs/chechnya"} kaz={"/chefs/kaz"} mala={"/chefs/mala"} singa={"/chefs/singa"} livan={"/chefs/livan"}/>
       </div>
     </div>
   );
