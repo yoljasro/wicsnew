@@ -119,7 +119,7 @@ const UzbChefs: FC<any> = ({ props }) => {
   useEffect(() => {
     const fetchChefs = async () => {
       try {
-        const response = await axios.get("https://api.worldhalal.uz//chefs");
+        const response = await axios.get("https://api.worldhalal.uz/chefs");
         const data = response.data.map((chef: ChefData) => ({
           ...chef,
           image: `https://api.worldhalal.uz/${chef.image}`,

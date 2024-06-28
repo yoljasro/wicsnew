@@ -100,7 +100,7 @@ const Restaurants: FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://api.worldhalal.uz//res");
+        const response = await axios.get("https://api.worldhalal.uz/res");
         const backendData = response.data.map((item: any) => ({
           name: item.nameuz,
           imageSrc: `https://api.worldhalal.uz/${item.image}`,

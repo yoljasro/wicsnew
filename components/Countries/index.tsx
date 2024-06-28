@@ -32,6 +32,7 @@ type LinkType = {
   krgzs: string;
   chechnya: string;
   kaz: string;
+  mala: string;
 };
 function TabPanel(props: TabPanelProps) {
   const { children, country, value, index, ...other } = props;
@@ -67,7 +68,8 @@ export const Countries: FC<LinkType> = ({
   turkey,
   krgzs,
   chechnya,
-  kaz
+  kaz,
+  mala
 }) => {
   const router = useRouter();
   const theme = useTheme();
@@ -163,7 +165,14 @@ export const Countries: FC<LinkType> = ({
               >
               <div className={styles.cont__card}>Kazakstan</div>
               </a>
+              <a
+                rel="noreferrer"
+                target="_blank"
+                href={mala}
+                className={styles.cont__link}
+              >
               <div className={styles.cont__card}>Malaysia</div>
+              </a>
               <div className={styles.cont__card}>Pakistan</div>
               <div className={styles.cont__card}>Livan</div>
               <div className={styles.cont__card}>Jordan</div>
