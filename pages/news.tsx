@@ -10,6 +10,34 @@ import { Button } from "@material-ui/core";
 
 const staticNewsItems = [
   {
+    id: "gul",
+    imageSrc: "/assets/img/gulfod.jpg",
+    imageAlt: "image",
+    title: "  Gulfood 2025 – В феврале 2025 года в Дубае пройдет выставка Gulfood ",
+    description: "где большое внимание будет уделено халяль-продукции",
+    date: "16-oktabr 2024",
+  },
+
+
+  {
+    id: "sum",
+    imageSrc: "/assets/img/sum.jpg",
+    imageAlt: "image",
+    title: "  World Halal Summit  ",
+    description: "2024 – В декабре в Индонезии пройдет Всемирный саммит по вопросам халяль-индустрии.",
+    date: "14-oktabr 2024",
+  },
+
+  {
+    id: "expo",
+    imageSrc: "/assets/img/expo.jpg",
+    imageAlt: "image",
+    title: " Halal Expo Istanbul 2024 – Одна из крупнейших международных выставок",
+    description: "посвященных халяль-индустрии, состоится с 26 по 29 октября 2024 года в Стамбуле.",
+    date: "11-oktabr 2024",
+  },
+
+  {
     id: "conferen",
     imageSrc: "/assets/img/konferensiya.png",
     imageAlt: "image",
@@ -81,7 +109,7 @@ interface NewsItem {
   imageSrc: string;
   imageAlt: string;
   title: string;
-  description: string;
+  description: string;  
   date: string;
 }
 

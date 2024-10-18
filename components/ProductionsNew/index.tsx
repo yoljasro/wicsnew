@@ -94,6 +94,42 @@ export const ProductionsNew: FC = () => {
         telegram: "/",
       },
     },
+   
+
+    {
+      imageSrc: "/assets/img/tamam.jpg",
+      title: "TAMIM",
+      siteLink: "",
+      certificateLink: "/assets/documents/pdfbir.pdf",
+      socialNetworks: {
+        instagram: "",
+        facebook: "",
+        telegram: "",
+      },
+    },
+    {
+      imageSrc: "/assets/img/dobroy.jpg",
+      title: "Доброе Деревенское утро",
+      siteLink: "",
+      certificateLink: "/assets/documents/pdfikki.pdf",
+      socialNetworks: {
+        instagram: "",
+        facebook: "",
+        telegram: "",
+      },
+    },
+    {
+      imageSrc: "/assets/img/alsafi.jpg",
+      title: "ALSAFI",
+      siteLink: "https://siyobferma.uz",
+      certificateLink: "/assets/documents/pdfuch.pdf",
+      socialNetworks: {
+        instagram: " ",
+        facebook: "",
+        telegram: "",
+      },
+    },
+
   ];
 
   useEffect(() => {
@@ -101,10 +137,10 @@ export const ProductionsNew: FC = () => {
       try {
         const apiResponse: ProjectLogoResponse[] = await projectsLogoAPI();
         const formattedData: ProjectData[] = apiResponse.map((item) => ({
-          imageSrc: `https://api.worldhalal.uz/${item.image}`,
+          imageSrc: `http://localhost:5000${item.image}`,
           title: item.nameuz,
           siteLink: item.siteLink,
-          certificateLink: `https://api.worldhalal.uz/${item.certificate}`,
+          certificateLink: `http://localhost:5000${item.certificate}`,
           socialNetworks: {
             instagram: item.instagram,
             facebook: item.facebook,

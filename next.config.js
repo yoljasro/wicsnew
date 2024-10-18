@@ -10,8 +10,8 @@ const nextConfig = {
   },
   output: "standalone",
   images: {
-    domains: ['localhost', 'api.kardise.com' , 'worldhalalsummit.com.tr'], 
+    domains: ['localhost', 'api.worldhalal.uz', 'worldhalalsummit.com.tr'], 
   },
 }
 
-module.exports = nextConfig
+module.exports = nextConfig;
