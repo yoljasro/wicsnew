@@ -17,7 +17,7 @@ const Expo = () => {
       </h1>
       <div className={styles.newsMain__images}>
         <Image
-          src={"/assets/img/expo.jpg"}
+          src={"/assets/img/expo.png"}
           alt="kazanImage"
           width={600}
           height={400}

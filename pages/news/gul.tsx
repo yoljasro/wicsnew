@@ -17,7 +17,7 @@ const Gul = () => {
       </h1>
       <div className={styles.newsMain__images}>
         <Image
-          src={"/assets/img/gulfod.jpg"}
+          src={"/assets/img/gulfod.png"}
           alt="kazanImage"
           width={600}
           height={400}

@@ -17,7 +17,7 @@ const Sum = () => {
       </h1>
       <div className={styles.newsMain__images}>
         <Image
-          src={"/assets/img/sum.jpg"}
+          src={"/assets/img/sum.png"}
           alt="kazanImage"
           width={600}
           height={400}

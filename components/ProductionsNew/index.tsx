@@ -97,7 +97,7 @@ export const ProductionsNew: FC = () => {
    
 
     {
-      imageSrc: "/assets/img/tamam.jpg",
+      imageSrc: "/assets/img/tamam.png",
       title: "TAMIM",
       siteLink: "",
       certificateLink: "/assets/documents/pdfbir.pdf",
@@ -108,7 +108,7 @@ export const ProductionsNew: FC = () => {
       },
     },
     {
-      imageSrc: "/assets/img/dobroy.jpg",
+      imageSrc: "/assets/img/dobroy.png",
       title: "Доброе Деревенское утро",
       siteLink: "",
       certificateLink: "/assets/documents/pdfikki.pdf",
@@ -119,7 +119,7 @@ export const ProductionsNew: FC = () => {
       },
     },
     {
-      imageSrc: "/assets/img/alsafi.jpg",
+      imageSrc: "/assets/img/alsafi.png",
       title: "ALSAFI",
       siteLink: "https://siyobferma.uz",
       certificateLink: "/assets/documents/pdfuch.pdf",
