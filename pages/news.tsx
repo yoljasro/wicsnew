@@ -13,7 +13,7 @@ const staticNewsItems = [
     id: "gul",
     imageSrc: "/assets/img/gulfod.jpg",
     imageAlt: "image",
-    title: "  Gulfood 2025 – В феврале 2025 года в Дубае пройдет выставка Gulfood ",
+    title: "Gulfood 2025 – В феврале 2025 года в Дубае пройдет выставка Gulfood ",
     description: "где большое внимание будет уделено халяль-продукции",
     date: "16-oktabr 2024",
   },
