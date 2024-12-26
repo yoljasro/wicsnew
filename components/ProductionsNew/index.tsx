@@ -134,7 +134,7 @@ export const ProductionsNew: FC = () => {
       imageSrc: "/assets/img/redb.png",
       title: "Red Bull",
       siteLink: "",
-      certificateLink: "/assets/documents/red.pdf",
+      certificateLink: "/assets/documents/hj.pdf",
       socialNetworks: {
         instagram: " ",
         facebook: "",
