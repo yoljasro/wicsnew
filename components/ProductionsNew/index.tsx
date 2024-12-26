@@ -121,7 +121,7 @@ export const ProductionsNew: FC = () => {
     {
       imageSrc: "/assets/img/alsafi.png",
       title: "ALSAFI",
-      siteLink: "https://siyobferma.uz",
+      siteLink: "",
       certificateLink: "/assets/documents/pdfuch.pdf",
       socialNetworks: {
         instagram: " ",
@@ -129,6 +129,31 @@ export const ProductionsNew: FC = () => {
         telegram: "",
       },
     },
+
+    {
+      imageSrc: "/assets/img/redb.png",
+      title: "Red Bull",
+      siteLink: "",
+      certificateLink: "/assets/documents/red.pdf",
+      socialNetworks: {
+        instagram: " ",
+        facebook: "",
+        telegram: "",
+      },
+    },
+
+    {
+      imageSrc: "/assets/img/slay.png",
+      title: "Slayke",
+      siteLink: "",
+      certificateLink: "/assets/documents/corlast.pdf",
+      socialNetworks: {
+        instagram: " ",
+        facebook: "",
+        telegram: "",
+      },
+    },
+
 
   ];
 
