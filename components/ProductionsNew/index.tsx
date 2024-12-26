@@ -40,7 +40,7 @@ export const ProductionsNew: FC = () => {
       },
     },
     {
-      imageSrc: "/assets/img/shashlikP.png",
+      imageSrc: "/assets/img/shashlikP.png ",
       title: "SHASHLIKUZ",
       siteLink: "",
       certificateLink: "/assets/documents/shashlikuz.pdf",
