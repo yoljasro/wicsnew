@@ -154,6 +154,30 @@ export const ProductionsNew: FC = () => {
       },
     },
 
+    {
+      imageSrc: "/assets/img/turonlogo.svg",
+      title: " Turon",
+      siteLink: "",
+      certificateLink: "/assets/documents/turon.pdf",
+      socialNetworks: {
+        instagram: "",
+        facebook: "",
+        telegram: "",
+      },
+    },
+
+    {
+      imageSrc: "/assets/img/qala.jpg",
+      title: " Etti Qal'a",
+      siteLink: "",
+      certificateLink: "/assets/documents/qala.pdf",
+      socialNetworks: {
+        instagram: "",
+        facebook: "",
+        telegram: "",
+      },
+    }
+
 
   ];
 
