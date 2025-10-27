@@ -549,7 +549,7 @@ const Restaurants: FC<any> = () => {
 
          <div className={styles.restaurants__card}>
           <Image
-            src={"/assets/img/resto.jpg"}
+            src={"/assets/img/resto.png"}
             width={600}
             height={330}
             alt="image"
@@ -565,7 +565,7 @@ const Restaurants: FC<any> = () => {
           <div className={styles.restaurants__content}>
             <h1 className={styles.restaurants__title}>Burger King</h1>
             <p className={styles.restaurants__description}>
-             Бургер Кинг – это место, где готовят мясо на огне и это единственный массовый ресторан быстрого питания, где подают бургеры с мраморной говядиной 
+             Бургер Кинг - Сеть ресторанов быстрого питания.
             </p>
             <Button
               variant="contained"
